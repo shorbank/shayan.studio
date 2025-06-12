@@ -1,5 +1,6 @@
 ---
-
+import Scene from "../components/Scene";
+import "../styles/global.css";
 ---
 
 <html lang="en">
@@ -11,6 +12,11 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<div class="h-full bg-black flex flex-col justify-center items-center">
+			<h1 class="text-3xl font-semibold font-mono text-white">
+				Shayan
+			</h1>
+			<Scene client:only="react" /> 
+		</div>
 	</body>
 </html>
