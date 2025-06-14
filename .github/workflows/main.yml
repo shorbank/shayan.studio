@@ -53,6 +53,14 @@ jobs:
         with:
           name: dist
           path: dist
+      - name: Await Manual Approval
+        uses: trstringer/manual-approval@v1
+        with:
+          secret: ${{ secrets.GITHUB_TOKEN }}
+          approvers: user1,user2
+          minimum-approvals: 1
+          issue-title: "Approve Deployment to Production"
+          issue-body: "Please approve the deployment of version 1.0.0 to production."
       - name: Sync dist folder to PRODUCTION
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with: 
