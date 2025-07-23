@@ -1,0 +1,15 @@
+---
+import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
+
+// Astro läuft auf dem Server – dieser Code hier wird **nicht im Browser** ausgeführt!
+---
+
+<script>
+  // Kein import hier – JS im `<script>`-Tag wird ignoriert, wenn du client:load nutzt.
+</script>
+
+<script is:inline type="module" client:load>
+  import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
+  Fancybox.bind("[data-fancybox]", {});
+</script>
